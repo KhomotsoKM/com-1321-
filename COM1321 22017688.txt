@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class CompoundInterest {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        // Get principal amount, interest rate, time and number of times interest is compounded annually
+        System.out.print("Enter the principal amount: ");
+        double principal = input.nextDouble();
+
+        System.out.print("Enter the interest rate: ");
+        double interestRate = input.nextDouble() / 100; // convert to decimal
+
+        System.out.print("Enter the time in years: ");
+        double time = input.nextDouble();
+
+        System.out.print("Enter the number of times interest is compounded per year: ");
+        int compoundPerYear = input.nextInt();
+
+        // Calculate compound interest
+        double amount = principal * Math.pow(1 + (interestRate / compoundPerYear), compoundPerYear * time);
+
+        // Display the result
+        System.out.printf("The compound interest is R%.2f", amount - principal);
+    }
+}
